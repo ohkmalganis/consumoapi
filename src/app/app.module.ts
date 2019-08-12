@@ -7,13 +7,21 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { routing, appRoutingProviders } from './app.routing';
 import { ApirestComponent } from './components/apirest/apirest.component';
 import { GraphqlComponent } from './components/graphql/graphql.component';
+import { PostComponent } from './components/apirest/post/post.component';
+import { PutComponent } from './components/apirest/put/put.component';
+import { PatchComponent } from './components/apirest/patch/patch.component';
+import { DeleteComponent } from './components/apirest/delete/delete.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DefaultComponent,
     ApirestComponent,
-    GraphqlComponent
+    GraphqlComponent,
+    PostComponent,
+    PutComponent,
+    PatchComponent,
+    DeleteComponent
   ],
   imports: [
     BrowserModule,

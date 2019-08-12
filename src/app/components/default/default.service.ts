@@ -23,5 +23,30 @@ export class DefaultService {
     return this._http.get(this.url + 'users', { headers: headers });
   }
 
+  postDatas(data: any): Observable<any> {
+    let json = JSON.stringify(data);
+    let params = "json=" + json;
+    let headers = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded');
+    return this._http.post(this.url + 'users', params, { headers: headers });
+  }
+
+  putDatas(id:any, data: any): Observable<any> {
+    let json = JSON.stringify(data);
+    let params = "json=" + json;
+    let headers = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded');
+    return this._http.put(this.url + 'users/' + id, params, { headers: headers });
+  }
+
+  patchDatas(id:any, data: any): Observable<any> {
+    let json = JSON.stringify(data);
+    let params = "json=" + json;
+    let headers = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded');
+    return this._http.patch(this.url + 'users/' + id, params, { headers: headers });
+  }
+
+  deleteDatas(id:any): Observable<any> {
+    let headers = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded');
+    return this._http.delete(this.url + 'users/' + id, { headers: headers });
+  }
 
 }

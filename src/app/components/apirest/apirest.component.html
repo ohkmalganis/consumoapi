@@ -1,11 +1,25 @@
 <h2 class="text-center">CONSUMO DE API (API - REST)</h2>
+<p class="text-center">
+  <a class="link wipe" [routerLink]="['/']">VOLVER</a>
+</p>
+<p class="text-center"> 
+  <a class="link underline">GET</a>  
+  <a class="link wipe" [routerLink]="['/apirest/post']">POST</a>  
+  <a class="link wipe" [routerLink]="['/apirest/put']">PUT</a>
+  <a class="link wipe" [routerLink]="['/apirest/patch']">PATCH</a>
+  <a class="link wipe" [routerLink]="['/apirest/delete']">DELETE</a> </p>
 <div *ngIf="!info">
   Esperando informacion...
 </div>
 <p *ngIf="info">
   Informacion recibida!
 </p>
-<table class="text-center" *ngIf="info" border="1">
+<p>Lo que estamos pidiendo:</p>
+<code>
+  {{ global }}users
+</code>
+<br><br>
+<table align="center" class="text-center" *ngIf="info">
   <thead>
     <tr>
       <th>ID</th>

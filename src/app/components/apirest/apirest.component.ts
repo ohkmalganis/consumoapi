@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DefaultService } from '../default/default.service';
 import { Router, ActivatedRoute } from '@angular/router';
+import { GLOBAL } from '../../config';
 
 @Component({
   selector: 'app-apirest',
@@ -14,6 +15,7 @@ export class ApirestComponent implements OnInit {
   public thereis = false;
   public info = false;
   public data:any;
+  public global = GLOBAL.url;
 
   constructor(
     private _router: Router,
