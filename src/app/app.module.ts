@@ -11,8 +11,9 @@ import { PostComponent } from './components/apirest/post/post.component';
 import { PutComponent } from './components/apirest/put/put.component';
 import { PatchComponent } from './components/apirest/patch/patch.component';
 import { DeleteComponent } from './components/apirest/delete/delete.component';
-import { ApolloModule } from 'apollo-angular';
-import { HttpLinkModule } from 'apollo-angular-link-http';
+import { ApolloModule, Apollo } from 'apollo-angular';
+import { HttpLinkModule, HttpLink } from 'apollo-angular-link-http';
+import { InMemoryCache } from 'apollo-cache-inmemory';
 
 @NgModule({
   declarations: [
@@ -39,4 +40,11 @@ import { HttpLinkModule } from 'apollo-angular-link-http';
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { 
+  constructor(apollo: Apollo, httpLink: HttpLink) {
+    apollo.create({
+      link: httpLink.create({ uri: 'https://launchpad.graphql.com/vm8mjvrnv3' }),
+      cache: new InMemoryCache()
+    });
+  }
+}
