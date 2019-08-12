@@ -11,6 +11,8 @@ import { PostComponent } from './components/apirest/post/post.component';
 import { PutComponent } from './components/apirest/put/put.component';
 import { PatchComponent } from './components/apirest/patch/patch.component';
 import { DeleteComponent } from './components/apirest/delete/delete.component';
+import { ApolloModule } from 'apollo-angular';
+import { HttpLinkModule } from 'apollo-angular-link-http';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import { DeleteComponent } from './components/apirest/delete/delete.component';
     routing,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ApolloModule,
+    HttpLinkModule
   ],
   providers: [
     appRoutingProviders
